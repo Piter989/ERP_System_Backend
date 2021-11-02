@@ -45,7 +45,6 @@ public class EmployeeController {
 
     @GetMapping("/employees/{idEmployee}")
     public EmployeeDto getEmployee(@PathVariable Long idEmployee) throws InterruptedException {
-        Thread.sleep(500);
         Optional<Employee> optionalEmployee = employeeRepository.findById(idEmployee);
 
         return  EmployeeDto.of(optionalEmployee.get());
